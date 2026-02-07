@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secret Love Page ❤️</title>
+
+<style>
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(to bottom,#ff758c,#ffb199);
+  text-align:center;
+  color:#4a0026;
+}
+
+/* PASSWORD SCREEN */
+#lockScreen{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.lockBox{
+  background:white;
+  padding:25px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+  max-width:320px;
+  width:90%;
+}
+
+input{
+  padding:10px;
+  width:90%;
+  border-radius:20px;
+  border:1px solid #ccc;
+  text-align:center;
+}
+
+button{
+  background:#c2185b;
+  color:white;
+  border:none;
+  padding:10px 20px;
+  border-radius:20px;
+  margin-top:10px;
+  cursor:pointer;
+}
+
+/* MAIN CONTENT */
+#main{
+  display:none;
+}
+
+.container{
+  max-width:420px;
+  margin:30px auto;
+  background:white;
+  padding:22px;
+  border-radius:22px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.25);
+}
+
+.rose{
+  font-size:70px;
+  cursor:pointer;
+  animation:pulse 1.3s infinite;
+}
+
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.2);}
+  100%{transform:scale(1);}
+}
+
+.hidden{
+  display:none;
+  background:#ffe4ec;
+  padding:15px;
+  border-radius:15px;
+  margin-top:10px;
+}
+
+.gifts span{
+  font-size:40px;
+  margin:10px;
+  cursor:pointer;
+}
+
+img{
+  width:100%;
+  border-radius:15px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PASSWORD SCREEN -->
+<div id="lockScreen">
+  <div class="lockBox">
+    <h2>🔒 Private Page</h2>
+    <p>Enter the secret password ❤️</p>
+    <input type="password" id="pass" placeholder="Password">
+    <br>
+    <button onclick="check()">Unlock 💖</button>
+    <p id="error" style="color:red;"></p>
+  </div>
+</div>
+
+<!-- MAIN PAGE -->
+<div id="main">
+  <div class="container">
+
+    <h1>🌹 Happy Rose Day Baby 🌹</h1>
+    <p>Mazya life madhlya favorite person la Happy Rose Day ❤️</p>
+
+    <p><b>Tap the Rose 🌹</b></p>
+    <div class="rose" onclick="showMsg()">🌹</div>
+    <div id="secret" class="hidden">
+      💌 You are my favorite person, forever 💖
+    </div>
+
+    <p><b>Pick a Gift 🎁</b></p>
+    <div class="gifts">
+      <span onclick="gift('💍 Forever together')">💍</span>
+      <span onclick="gift('🍫 Sweet like you')">🍫</span>
+      <span onclick="gift('❤️ My heart is yours')">❤️</span>
+    </div>
+    <div id="giftMsg" class="hidden"></div>
+
+    <p><b>Our Moment 📸</b></p>
+    <img src="c:\Users\rohit\OneDrive\Pictures\Camera Roll 1\connected2.jpeg">
+
+    <p><b>Always Yours ❤️<br>I Love You So Much My Dear Chottu Baal 😘</b></p>
+
+  </div>
+</div>
+
+<script>
+const PASSWORD = "15/2/2025"; // 🔑 CHANGE PASSWORD HERE
+
+function check(){
+  let p=document.getElementById("pass").value;
+  if(p===PASSWORD){
+    document.getElementById("lockScreen").style.display="none";
+    document.getElementById("main").style.display="block";
+  }else{
+    document.getElementById("error").innerText="Wrong password 😢";
+  }
+}
+
+function showMsg(){
+  document.getElementById("secret").style.display="block";
+}
+
+function gift(msg){
+  let g=document.getElementById("giftMsg");
+  g.innerHTML=msg;
+  g.style.display="block";
+}
+</script>
+
+</body>
+</html>   
